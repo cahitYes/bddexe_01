@@ -18,6 +18,14 @@ Nous utilisons le moteur **InnoDB**.
 
 ### Relations
 
-- Relation many to many en cascade entre `news` et `categ` dans la table `news_has_categ`
+- Relation **many to many entre** `news` et `categ` dans la table `news_has_categ`, en **CASCADE ON DELETE** pour éviter la suppression manuelle du lien entre les news et les catégories (en cas de suppression d'une news **ou** d'une catégorie).
 
 ![news_has_categ](https://github.com/WebDevCF2m2021/bddexe_01/raw/main/img/fk_news_has_categ.png)
+
+- Relation **many to one** entre `news` et `user`, en **SET NULL ON DELETE** pour permettre à un article de rester dans la DB si on supprime l'utilisateur (! le champ `news.user_iduser` doit permettre le NULL)
+
+![news](https://github.com/WebDevCF2m2021/bddexe_01/raw/main/img/fk_news-with-user.png)
+
+- Relation **many to one** entre `user` et `permission`, **SET NULL ON DELETE** pour permettre à un utilisateur de rester dans la DB si on supprime une permission (! le champ `user.permission_idpermission` doit permettre le NULL)
+
+![news](https://github.com/WebDevCF2m2021/bddexe_01/raw/main/img/fk_user-permission.png)
