@@ -29,3 +29,7 @@ Nous utilisons le moteur **InnoDB**.
 - Relation **many to one** entre `user` et `permission`, **SET NULL ON DELETE** pour permettre à un utilisateur de rester dans la DB si on supprime une permission (! le champ `user.permission_idpermission` doit permettre le NULL)
 
 ![news](https://github.com/WebDevCF2m2021/bddexe_01/raw/main/img/fk_user-permission.png)
+
+## Plugin pour VSCode
+
+J'ai installé "Database Client for Visual Studio Code" pour pouvoir effectuer les requêtes depuis VSCode sans devoir lancer Workbench
