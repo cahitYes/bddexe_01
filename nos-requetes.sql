@@ -20,13 +20,13 @@ SELECT
   *
 FROM
   permission;
-# Sélection de tous les champs d'utilisateurs
+# Sélection de tous les champs dutilisateurs
 SELECT
   *
 FROM
   `user`;
-# Sélection de tous les champs d'utilisateurs avec le champs 'name' venant de permission
-  # En jointure interne ! 'name' étant présent 2x, il faut utiliser un alias 'AS permission_name'
+-- Sélection de tous les champs d'utilisateurs avec le champs 'name' venant de permission
+  -- En jointure interne ! 'name' étant présent 2x, il faut utiliser un alias 'AS permission_name'
 SELECT
   `user`.*,
   `permission`.`name` AS permission_name
