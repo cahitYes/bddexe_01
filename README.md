@@ -52,7 +52,7 @@ pour obtenir:
 
 ![3](https://github.com/mikhawa/bddexe_01/raw/exe1/img/3.png)
 
--- Séléctionnez `idcateg` et `name` de `categ` quand `idcateg` se trouve est 1, 3 ou 5 ordonné par `name` descendant
+-- Séléctionnez `idcateg` et `name` de `categ` quand `idcateg` est 1, 3 ou 5 ordonné par `name` descendant
 
 ![4](https://github.com/mikhawa/bddexe_01/raw/exe1/img/4.png)
 
