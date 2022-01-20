@@ -17,6 +17,16 @@ SELECT `idcateg`, `name` FROM `categ`
 SELECT * FROM `categ` WHERE `desc` LIKE '%et%' ;
 
 -- Séléctionnez tous les champs de `categ` dont l' `idcateg` vaut 5 ainsi que les `idnews` et  `title` de la table `news` qui se trouvent dans cette catégorie, même si il n'y en a pas (présence de `categ` dans tous les cas, 17 lignes de résultats) , ordonnés par `news`.`title` ASC
+SELECT c.*, n.`idnews` , n.`title` 
+    FROM `categ`c
+    LEFT JOIN `news_has_categ` h
+        ON h.`categ_idcateg` = c.`idcateg`
+    LEFT JOIN `news` n
+        ON n.`idnews` = h.`news_idnews`
+    WHERE c.`idcateg` = 5
+    ORDER BY n.`title` ASC
+        ;
+
 
 -- Séléctionnez tous les champs de `categ` dont l' `idcateg` vaut 5 ainsi que les `idnews` et  `title` de la table `news` qui se trouvent dans cette catégorie, même si il n'y en a pas (présence de `categ` dans tous les cas, 6 lignes de résultats) , ordonnés par `news`.`title` ASC ET que `news`.`visible` vaut 1 !
 -- Séléctionnez tous les champs de `categ` dont l' `idcateg` vaut 5 ainsi que les `idnews` (concaténés sur une seul ligne avec la ',' comme séparateur) et  `title` (concaténés sur une seul ligne avec '|||' comme séparateur) de la table `news` qui se trouvent dans cette catégorie, même si il n'y en a pas (présence de `categ` dans tous les cas, 1 ligne de résultats) ,  ET que `news`.`visible` vaut 1 !
