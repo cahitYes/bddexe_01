@@ -128,4 +128,10 @@ SELECT u.`iduser`, u.`login`,
        ORDER BY nbarticles DESC
        LIMIT 5;
 
---
+-- OU
+
+SELECT u.`iduser`, u.`login`, 
+       (SELECT COUNT(n.`idnews`) FROM `news` n WHERE n.`user_iduser` = u.`iduser`) AS nbarticles
+       FROM `user` u 
+       ORDER BY nbarticles DESC
+       LIMIT 5;
