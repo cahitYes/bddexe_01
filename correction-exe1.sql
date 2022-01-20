@@ -119,3 +119,13 @@ EXECUTE STMT USING @limit, @offset;
 
 
 -- Sélectionnez `iduser` et `login` de la table `user`, avec le nombre d'articles écrit par chacun renommé `nbarticles`, classés par `nbarticles` descendant et en n'en gardant que les 5 premiers (5 résultats)
+SELECT u.`iduser`, u.`login`, 
+       COUNT(n.`idnews`) AS nbarticles
+       FROM `user` u 
+       INNER JOIN `news` n  
+        ON n.`user_iduser` = u.`iduser`
+       GROUP BY u.`iduser`
+       ORDER BY nbarticles DESC
+       LIMIT 5;
+
+--
